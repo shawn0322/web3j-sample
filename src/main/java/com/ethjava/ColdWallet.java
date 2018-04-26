@@ -38,20 +38,20 @@ public class ColdWallet {
 
 	private static Web3j web3j;
 
-	private static String d = "/Users/yangzhengwei/Documents/eth/coldwallet";
+	private static String d = "D:/eth-test/wallet";
 
-	private static String address = "0xa530d89646db11abfa701e148e87324355fc6ea7";
+	private static String address = "0x2b40d227806cc2c2b638a06337fa09e25d076778";
 
-	private static String keystore = "{\"address\":\"a530d89646db11abfa701e148e87324355fc6ea7\",\"id\":\"246e7d1d-8f31-4a3e-951d-41722213a44f\",\"version\":3,\"crypto\":{\"cipher\":\"aes-128-ctr\",\"ciphertext\":\"26d10977bc199f6b678e89d3b7c3874bab3cddda18b92c014890d80657d7cc6a\",\"cipherparams\":{\"iv\":\"beaa9a404f793e86460a1fc71a0372a8\"},\"kdf\":\"scrypt\",\"kdfparams\":{\"dklen\":32,\"n\":262144,\"p\":1,\"r\":8,\"salt\":\"f06eb3d208db1643671c6e0210789f05e6de1746252fe5b83a38618e2bd18f1e\"},\"mac\":\"0aa4f85dfecaf8203ad0ee22c47ff6fb35b8f47d8f56ddb890ef2d513a06a801\"}}\n";
+	public static String keystore = "{\"address\":\"2b40d227806cc2c2b638a06337fa09e25d076778\",\"id\":\"511ea14e-f3aa-4cd2-b579-2f3e660a2fb7\",\"version\":3,\"crypto\":{\"cipher\":\"aes-128-ctr\",\"ciphertext\":\"b412f745e86b6d0f2e530c917949b8987d0eabdfd0ad3fd8680c1be39cd36471\",\"cipherparams\":{\"iv\":\"69968168a62a61fcbbb9d7f933ed0e47\"},\"kdf\":\"scrypt\",\"kdfparams\":{\"dklen\":32,\"n\":262144,\"p\":1,\"r\":8,\"salt\":\"d53b22ca1448d6a165c803c16bafd3ce394d702b48762bf0985fdd14eba5f2a2\"},\"mac\":\"cdcd91d6e0baafcc74974cc233677c29414b77364e45f11dd137ae8b41b38405\"}}\n";
 
-	private static String privateKey = "f4529331f460fa88cc14eb981baf90201e7fc709386bf2f5b9ec687639f70086";
+	private static String privateKey = "65606054f8eea93ccb125d51e130bb26f2146d753e53eed9a804e9039cb0e37c";
 
 	public static void main(String[] args) {
 		web3j = Web3j.build(new HttpService(Environment.RPC_URL));
 		try {
-//			createWallet("11111111");
-//			decryptWallet(keystore, "11111111");
-//			testTransaction();
+			createWallet("gaoxun");
+//			decryptWallet(keystore, "gaoxun");
+	//		testTransaction();
 //			testTokenTransaction();
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -70,7 +70,7 @@ public class ColdWallet {
 		nonce = ethGetTransactionCount.getTransactionCount();
 		BigInteger gasPrice = Convert.toWei(BigDecimal.valueOf(3), Convert.Unit.GWEI).toBigInteger();
 		BigInteger gasLimit = BigInteger.valueOf(30000);
-		String to = "0x6c0f49aF552F2326DD851b68832730CB7b6C0DaF".toLowerCase();
+		String to = "0x267c1c14abe232ed8704c2a1796d66d98b29fcd3".toLowerCase();
 		BigInteger value = Convert.toWei(BigDecimal.valueOf(0.5), Convert.Unit.ETHER).toBigInteger();
 		String data = "";
 		byte chainId = ChainId.ROPSTEN;//测试网络
